@@ -4,7 +4,7 @@ with open('README.md') as f:
     long_description = f.read()
 
 setup(
-    name='Flask-pyoidc',
+    name='Flask-pyoidc-euro',
     version='3.2.1',
     packages=['flask_pyoidc'],
     package_dir={'': 'src'},
