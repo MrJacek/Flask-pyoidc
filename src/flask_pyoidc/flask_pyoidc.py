@@ -67,7 +67,7 @@ class OIDCAuthentication:
         # dynamically add the Flask redirect uri to the client info
         with app.app_context():
             self.clients = {
-                name: PyoidcFacade(configuration, url_for(self._redirect_uri_endpoint))
+                name: PyoidcFacade(configuration, url_for(self._redirect_uri_endpoint,_external=True,_scheme="https"))
                 for (name, configuration) in self._provider_configurations.items()
             }
 
