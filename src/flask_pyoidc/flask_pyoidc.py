@@ -141,6 +141,8 @@ class OIDCAuthentication:
         logger.debug('received authentication response: %s', authn_resp.to_json())
 
         try:
+            logger.debug(f"Keys in session: {flask.session.keys()}")
+            logger.debug(f"Values in session: {flask.session.values()}")
             result = AuthResponseHandler(client).process_auth_response(authn_resp,
                                                                        flask.session.pop('state'),
                                                                        flask.session.pop('nonce'))
